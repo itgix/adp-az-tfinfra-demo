@@ -7,7 +7,7 @@ provision_vnet            = false
 subnet_aks_nodes_cidr     = "10.10.1.0/24"
 subnet_aks_apiserver_cidr = "10.10.2.0/28"
 workload_private_dns_zones = [
-  "contoso.internal"
+
 ]
 workload_public_dns_zones = [
 
