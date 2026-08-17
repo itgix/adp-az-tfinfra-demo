@@ -10,7 +10,7 @@ workload_private_dns_zones = [
 
 ]
 workload_public_dns_zones = [
-
+  "adp.csiliev.eu"
 ]
 provision_aks       = true
 aks_private_cluster = false
