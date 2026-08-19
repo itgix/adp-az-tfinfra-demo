@@ -41,5 +41,5 @@ aks_system_pool = {
 }
 provision_identities       = true
 provision_kubelet_identity = true
-enable_eso                 = false
+enable_eso                 = true
 budget_enabled             = false
