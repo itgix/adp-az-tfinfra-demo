@@ -39,8 +39,14 @@ aks_system_pool = {
     "max_surge" = "1"
   }
 }
-provision_identities       = true
-provision_kubelet_identity = true
-enable_eso                 = true
-enable_loki                = true
-budget_enabled             = false
+provision_postgresql          = false
+postgresql_private_networking = false
+postgresql_manage_dns         = false
+provision_cosmosdb            = true
+cosmosdb_private_networking   = true
+cosmosdb_manage_dns           = true
+provision_identities          = true
+provision_kubelet_identity    = true
+enable_eso                    = false
+enable_loki                   = true
+budget_enabled                = false
