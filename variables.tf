@@ -265,6 +265,17 @@ variable "postgresql_geo_redundant_backup" {
   default     = false
 }
 
+variable "postgresql_administrator_login" {
+  description = "Administrator login name for PostgreSQL Flexible Server"
+  default     = "psqladmin"
+}
+
+variable "postgresql_administrator_password" {
+  description = "Administrator password for PostgreSQL Flexible Server. Must meet Azure complexity requirements."
+  sensitive   = true
+  default     = null
+}
+
 variable "postgresql_databases" {
   description = "Map of databases to create on the server"
   default = {

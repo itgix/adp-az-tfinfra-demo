@@ -25,6 +25,9 @@ module "postgresql" {
   #---------------------------------------------------------------------------
   # Authentication
   #---------------------------------------------------------------------------
+  administrator_login    = var.postgresql_administrator_login
+  administrator_password = var.postgresql_administrator_password
+  
   authentication = {
     active_directory_auth_enabled = true
     password_auth_enabled         = true
