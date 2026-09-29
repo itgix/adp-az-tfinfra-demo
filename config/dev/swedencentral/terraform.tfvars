@@ -39,14 +39,44 @@ aks_system_pool = {
     "max_surge" = "1"
   }
 }
-provision_postgresql          = false
-postgresql_private_networking = false
-postgresql_manage_dns         = false
-provision_cosmosdb            = true
-cosmosdb_private_networking   = true
-cosmosdb_manage_dns           = true
-provision_identities          = true
-provision_kubelet_identity    = true
-enable_eso                    = true
-enable_loki                   = true
-budget_enabled                = false
+provision_identities             = true
+provision_kubelet_identity       = true
+provision_postgresql             = true
+postgresql_version               = "16"
+postgresql_sku_name              = "B_Standard_B1ms"
+postgresql_storage_mb            = 32768
+postgresql_storage_tier          = "P4"
+postgresql_private_networking    = false
+postgresql_manage_dns            = true
+subnet_postgresql_cidr           = "10.10.3.0/24"
+postgresql_high_availability     = false
+postgresql_zone                  = "1"
+postgresql_backup_retention_days = 7
+postgresql_geo_redundant_backup  = false
+postgresql_databases = {
+  "backstage" = {
+    "name"      = "backstage"
+    "charset"   = "UTF8"
+    "collation" = "en_US.utf8"
+  }
+  "itgix_portal" = {
+    "name"      = "itgix_portal"
+    "charset"   = "UTF8"
+    "collation" = "en_US.utf8"
+  }
+}
+postgresql_firewall_rules = {
+  "allow_azure_services" = {
+    "name"             = "AllowAzureServices"
+    "start_ip_address" = "0.0.0.0"
+    "end_ip_address"   = "0.0.0.0"
+  }
+  "allow_all" = {
+    "name"             = "AllowAll"
+    "start_ip_address" = "0.0.0.0"
+    "end_ip_address"   = "255.255.255.255"
+  }
+}
+enable_eso     = true
+enable_loki    = true
+budget_enabled = false
