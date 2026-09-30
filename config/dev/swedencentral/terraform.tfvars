@@ -80,5 +80,5 @@ postgresql_firewall_rules = {
   }
 }
 enable_eso     = true
-enable_loki    = true
+enable_loki    = false
 budget_enabled = false
