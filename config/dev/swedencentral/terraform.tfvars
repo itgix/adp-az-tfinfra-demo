@@ -41,9 +41,9 @@ aks_system_pool = {
 }
 provision_identities              = true
 provision_kubelet_identity        = true
-provision_postgresql              = false
+provision_postgresql              = true
 postgresql_version                = "16"
-postgresql_sku_name               = "B_Standard_B2s"
+postgresql_sku_name               = "B_Standard_B1ms"
 postgresql_storage_mb             = 32768
 postgresql_storage_tier           = "P4"
 postgresql_private_networking     = false
