@@ -25,15 +25,15 @@ aks_admin_group_ids = [
 ]
 aks_system_pool = {
   "name"    = "system"
-  "vm_size" = "Standard_B4ms"
+  "vm_size" = "Standard_B2ms"
   "os_sku"  = "AzureLinux"
   "availability_zones" = [
     "1"
   ]
   "enable_auto_scaling" = true
   "min_count"           = 1
-  "max_count"           = 2
-  "count_of"            = 2
+  "max_count"           = 3
+  "count_of"            = 3
   "os_disk_size_gb"     = 128
   "upgrade_settings" = {
     "max_surge" = "1"
