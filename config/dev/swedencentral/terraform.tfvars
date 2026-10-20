@@ -25,7 +25,7 @@ aks_admin_group_ids = [
 ]
 aks_system_pool = {
   "name"    = "system"
-  "vm_size" = "Standard_B2ms"
+  "vm_size" = "Standard_B4ms"
   "os_sku"  = "AzureLinux"
   "availability_zones" = [
     "1"
