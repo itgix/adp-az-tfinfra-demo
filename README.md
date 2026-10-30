@@ -27,6 +27,7 @@
 | Name | Type |
 |------|------|
 | [azurerm_dns_zone.public](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_zone) | resource |
+| [azurerm_federated_identity_credential.external-dns-internal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential) | resource |
 | [azurerm_federated_identity_credential.external_dns](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential) | resource |
 | [azurerm_federated_identity_credential.external_secrets](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential) | resource |
 | [azurerm_federated_identity_credential.loki](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential) | resource |
@@ -84,6 +85,7 @@
 | <a name="input_cosmosdb_sql_databases"></a> [cosmosdb\_sql\_databases](#input\_cosmosdb\_sql\_databases) | Map of SQL databases and containers to create | `map` | `{}` | no |
 | <a name="input_cosmosdb_subresource_name"></a> [cosmosdb\_subresource\_name](#input\_cosmosdb\_subresource\_name) | The private endpoint subresource. Possible values: SQL, SqlDedicated, Cassandra, MongoDB, Gremlin, Table. | `string` | `"SQL"` | no |
 | <a name="input_enable_eso"></a> [enable\_eso](#input\_enable\_eso) | Whether to enable External Secrets Operator integration. When true, looks up existing Key Vault via data and assigns role. | `bool` | `true` | no |
+| <a name="input_enable_external_dns_internal"></a> [enable\_external\_dns\_internal](#input\_enable\_external\_dns\_internal) | Whether to create a federated identity credential for the internal external-dns instance. The same workload-dns managed identity is reused. | `bool` | `false` | no |
 | <a name="input_enable_loki"></a> [enable\_loki](#input\_enable\_loki) | Whether to enable Loki integration. When true, creates workload identity and assigns Storage Blob Data Contributor role. | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment in which the infrastructure is going to be deployed | `string` | `"dev"` | no |
 | <a name="input_postgresql_administrator_login"></a> [postgresql\_administrator\_login](#input\_postgresql\_administrator\_login) | Administrator login name for PostgreSQL Flexible Server | `string` | `"psqladmin"` | no |

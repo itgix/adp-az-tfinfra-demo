@@ -1,11 +1,12 @@
-project_name              = "contoso"
-environment               = "dev"
-region                    = "swedencentral"
-region_short              = "sc"
-az_subscription_id        = "f7f8b016-64ca-4d42-afad-de91b2eae685"
-provision_vnet            = false
-subnet_aks_nodes_cidr     = "10.10.1.0/24"
-subnet_aks_apiserver_cidr = "10.10.2.0/28"
+project_name                 = "contoso"
+environment                  = "dev"
+region                       = "swedencentral"
+region_short                 = "sc"
+az_subscription_id           = "f7f8b016-64ca-4d42-afad-de91b2eae685"
+enable_external_dns_internal = true
+provision_vnet               = false
+subnet_aks_nodes_cidr        = "10.10.1.0/24"
+subnet_aks_apiserver_cidr    = "10.10.2.0/28"
 workload_private_dns_zones = [
 
 ]

@@ -403,6 +403,12 @@ variable "enable_eso" {
   default     = true
 }
 
+variable "enable_external_dns_internal" {
+  description = "Whether to create a federated identity credential for the internal external-dns instance. The same workload-dns managed identity is reused."
+  type        = bool
+  default     = false
+}
+
 variable "enable_loki" {
   description = "Whether to enable Loki integration. When true, creates workload identity and assigns Storage Blob Data Contributor role."
   default     = false
