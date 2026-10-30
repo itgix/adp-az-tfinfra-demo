@@ -223,14 +223,14 @@ resource "azurerm_federated_identity_credential" "external_dns" {
   subject                   = "system:serviceaccount:external-dns:external-dns-sa"
 }
 
-resource "azurerm_federated_identity_credential" "external-dns-internal" {
+resource "azurerm_federated_identity_credential" "external_dns_internal" {
   count = var.provision_aks && var.enable_external_dns_internal ? 1 : 0
 
   name                      = "fc-external-dns-internal"
-  user_assigned_identity_id = module.lz_vending.umi_resource_ids["workload-dns-internal"]
+  user_assigned_identity_id = module.lz_vending.umi_resource_ids["workload-dns"]
   audience                  = ["api://AzureADTokenExchange"]
   issuer                    = module.aks[0].oidc_issuer_profile_issuer_url
-  subject                   =  "system:serviceaccount:external-dns-internal:external-dns-internal-sa"
+  subject                   = "system:serviceaccount:external-dns-internal:external-dns-internal-sa"
 }
 
 resource "azurerm_federated_identity_credential" "external_secrets" {
